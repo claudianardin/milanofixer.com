@@ -2,49 +2,73 @@ extends _layout
 
 block app
   .c
+
+    #header
+      img#top-logo(src='/img/logo.png', alt='Milano Fixer')
+      .links
+        | links
+
+    #cover
+
+    .spacer-40
+
     .p
 
-      #head
-        img#top-logo(src='/img/logo.png', alt='Milano Fixer')
-        h2 MILANOFIXER
+      #bio
+        .center
+          :markdown-it
+            # Your fixer. In Italy, in the world. #
+            Ciao! We are Sara and Claudia, two italian editors based in Milan with experience in the field of Tv Production. We have been working for several years in one of the two biggest television companies in Italy. We speak english and spanish and our team speak also russian and french. We are also available for Italian Productions that need support for filming all over the world... that’s our daily job!
 
       .spacer-40
 
-      #bio
-        :markdown-it
-          ## Your fixer. In Italy, in the world. ##
-          Ciao! We are Sara and Claudia, two italian editors based in Milan with experience in the field of Tv Production. We have been working for several years in one of the two biggest television companies in Italy. We speak english and spanish and our team speak also russian and french. We are also available for Italian Productions that need support for filming all over the world... that’s our daily job!
-
-      .spacer-20
-
       #skills
-        :markdown-it
-          ## WHAT DO WE DO FOR YOU? ##
-          First of all Pre-production, we can help you finding stories, locations, contacts and asking permits if needed. We can connect you with local authorities, specialists in every sector (for example health, food, fashion, tourism specialists and scientists) and press office.  
-          On the field: we provide interpreters, camera operators, sound and lights technicians, drivers. We guarantee you also the best accommodations at the lowest rate.  
-          Production services and fixing activities will be assisting and coordinating your project throughout Italy before, during and after your visit, providing you a full assistance. Indeed, after filming, our team can provide you post- production services.  
-          We can't wait to start new exciting projects!!!
-
-          ### ON WORLDFIXER PLATFORM ###
-          You can find what they say about us on [Worldfixer.com](https://worldfixer.com/profile)
-
-          ### FACEBOOK AND INSTAGRAM ###
-          Follow our activity on [Facebook] and [Instagram]
-
-        .spacer-20
-
-        #contacts
+        .center
           :markdown-it
-            ## contacts ##
-            - [email @milanofixer](mailto:milanofixer@gmail.com)
-            - +393489122191
-            - +393470431506
-
-        .spacer-20
-
-        #footer
-          :markdown-it
-            built with &hearts; in Milan using  
-            [Sublime Text](http://www.sublimetext.com/), [pug](https://pugjs.org/), [stylus](http://stylus-lang.com/) & [gulp](http://gulpjs.com/)
+            # What we do for you #
+            First of all Pre-production, we can help you finding stories, locations, contacts and asking permits if needed. We can connect you with local authorities, specialists in every sector (for example health, food, fashion, tourism specialists and scientists) and press office.  
+            On the field: we provide interpreters, camera operators, sound and lights technicians, drivers. We guarantee you also the best accommodations at the lowest rate.  
+            Production services and fixing activities will be assisting and coordinating your project throughout Italy before, during and after your visit, providing you a full assistance. Indeed, after filming, our team can provide you post- production services.  
+            We can't wait to start new exciting projects!!!
 
         .spacer-40
+
+        .center
+          :markdown-it
+            ## On Worldfixer platform ##
+            You can find what they say about us on [Worldfixer.com](https://worldfixer.com/profile)
+
+        .spacer-40
+
+        .center
+          :markdown-it
+            ## Facebook & Instagram ##
+
+          p
+            | Follow our activity on
+            .icon.facebook
+            a(href='https://www.facebook.com/milanofixer' target='_blank') Facebook
+            | &nbsp;and&nbsp;
+            .icon.instagram
+            a(href='https://www.instagram.com/milanofixer/' target='_blank') Instagram
+
+        .spacer-40
+
+      #contacts
+        .center
+          h2 Contattaci
+          ul
+            li
+              .icon.envelope
+              span
+                a(href='mailto:milanofixer@gmail.com')
+                  | @milanofixer
+
+            li
+              .icon.mobile
+              span +393489122191
+            li
+              .icon.mobile
+              span +393470431506
+
+      .spacer-20

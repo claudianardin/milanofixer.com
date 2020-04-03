@@ -1,6 +1,6 @@
 @import 'nib'
 @import 'rupture'
-@import url('//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap');
 
 
 // Rupture media query for PureCSS
@@ -9,13 +9,14 @@ rupture.scale-names = 'sm' 'md' 'lg' 'xl' 'hd'
 
 global-reset()
 
-.source-sans
-  font-family 'Source Sans Pro', sans-serif
+.nunito
+  font-family 'Nunito', sans-serif
   font-weight 400
-.source-sans-light
-  font-family 'Source Sans Pro', sans-serif
-  font-weight 300
-  
+.nunito-bold
+  font-family 'Nunito', sans-serif
+  font-weight 600
+.center
+  text-align center
   
 /* Spacer */
 $spacer = 5, 10, 20, 30, 40, 60, 70, 80, 100, 150, 200
@@ -27,106 +28,89 @@ for _val in $spacer
 
 html,
 body
+  @extends .nunito
   min-height 100%
-  @extends .source-sans-light
   background #fff
-  color #666
-  line-height 1.8em
+  color #333
+  line-height 2rem
+  font-size 16px
 
 a
-  color #aaa
+  color #000
   text-decoration none
-  box-shadow inset 0 -1px 0 0 #aaa
+  box-shadow inset 0 -1px 0 0 #000
   transition all 0.5s ease
   &:hover
-    color #999
-    box-shadow inset 0 -1px 0 0 #999
-
-h1, h2, h3
-  @extends .source-sans-light
-h4, h5, h6
-  @extends .source-sans
+    background #000
+    color #fff
+    box-shadow none
+    svg
+      fill #fff
   
 .p
-  padding 20px 40px
-  
-.c
-  max-width 560px
+  padding 40px
 
-#head
-  & > *
-    display inline-block
-    vertical-align middle
-    margin-left 20px
-    &:first-child
-      margin-left 0
-  img#top-logo
-    border none
-    width (472px / 8)
-    height @width
+#header
+  @extends .p
+  display flex
+  align-items center
+  justify-content space-between
   
-ol,
-ul
-  list-style-type cjk-ideographic
-  margin 0
-  padding 0
-  li
-    margin-left 1.4em
-    
-+below('sm')
-  #head
+#cover
+  height 560px
+  background-image url('/img/cover.jpeg')
+  background-position center
+  background-attachment fixed
+  background-repeat no-repeat
+  background-size cover
+
+  +below('md')
+    height 450px
+
+  +below('sm')
+    height 300px
+
+#bio,
+#skills,
+#contacts
+  max-width 768px
+  margin 0 auto
+
+  h1, h2
     text-align center
-    & > *
-      display block
-      margin 0 auto 20px auto
-      &:last-child
-        margin-bottom 0px
-    img#top-logo
-      width (472px / 4)
-      height auto
-      max-width 100%
-      margin-left auto
-      margin-right auto
-    h2
-      @extends h1
-    
-body.cv-page
-  
-  .c
-    max-width 100%
+    font-weight 600
+    margin-bottom 20px
+    text-transform uppercase
 
-  @extends .source-sans-light
-  font-size 0.9em
-  line-height 1.6em
-  color #000
-  
-  a
-    color #000
-    transition none
-    box-shadow none
-    &:hover
-      color #000
-      box-shadow none
-      
-  b, strong
-    @extends .source-sans
-  
-  h1, h2, h3
-    @extends .source-sans-light
-    text-transform uppercase
-  h4, h5, h6
-    @extends .source-sans
-    text-transform uppercase
-    
-  hr
-    border none
-    height 1.4em
-    
-  ol,
+  h1
+    font-size 28px
+  h2
+    font-size 24px
+
+  .icon
+    margin-right 5px
+
+#contacts
   ul
-    list-style-type none
-    
-  blockquote
-    margin 0
-    padding 0
-    font-size 0.8em
+    li
+      display block
+      vertical-align middle
+      .icon
+        margin-right 5px
+
+.icon
+  display inline-block
+  width 16px
+  height 16px
+  background-size cover
+  background-position center
+  background-repeat no-repeat
+
+.envelope
+  background-image url('/img/envelope.svg')
+.facebook
+  background-image url('/img/facebook.svg')
+.instagram
+  background-image url('/img/instagram.svg')
+.mobile
+  background-image url('/img/mobile.svg')
