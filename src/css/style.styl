@@ -67,14 +67,27 @@ span.icon
   padding 40px
 
 #header
-  @extends .p
+  padding 20px 10px
+  box-sizing border-box
+  max-width 768px
+  margin 0 auto
   display flex
   align-items center
   justify-content space-between
+  line-height 100%
+
+  .logo
+    display flex
+    align-items center
+    h1
+      font-size 24px
+      margin-left 10px
+  
   .links
-    vertical-align middle
+    display flex
+    align-items center
     & > *
-      display inline-block
+      display block
       & + *
         margin-left 10px
     span.label
@@ -82,6 +95,19 @@ span.icon
     span.icon
       width 20px
       height 20px
+
+  #logo
+    min-width 80px
+    width 80px
+    height auto
+
+  +below('md')
+    padding 20px
+
+  +below('sm')
+    h1
+      display none
+
   
 #cover
   height 560px

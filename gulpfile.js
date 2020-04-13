@@ -21,7 +21,7 @@ gulp.task('serve', (cb) => {
     root: './dist',
     livereload: true,
     host: '0.0.0.0',
-    port: 1337,
+    port: 3000,
   });
   cb();
 });
